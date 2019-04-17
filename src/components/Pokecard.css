@@ -1,0 +1,11 @@
+.Pokecard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  background: slategray;
+  border: .1rem solid black;
+  box-shadow: 0 .3rem .5rem rbga(0,0,0,.7);
+}
