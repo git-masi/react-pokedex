@@ -1,5 +1,6 @@
 import React from 'react';
 import Pokecard from './Pokecard';
+import './Pokedex.css';
 
 const pokedex = props => {
   const pokemon = [
@@ -26,8 +27,11 @@ const pokedex = props => {
   });
 
   return (
-    <div>
-      {displayPokecards}
+    <div className="Pokedex">
+      <h1>Pokedex</h1>
+      <div className="Pokedex--card-container">
+        {displayPokecards}
+      </div>
     </div>
   )
 }
