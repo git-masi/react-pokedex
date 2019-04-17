@@ -8,18 +8,17 @@ const pokecard = props => {
     while (output.length < 3) {
       output = '0' + output;
     }
-    console.log(output);
     return output;
   }
 
   const {id, name, type, exp} = props;
-  
+
   return (
     <div className="Pokecard">
       <h3>{name}</h3>
-      <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${addZeros(id)}.png`} alt={`the pokemon ${name}`}/>
-      <p>{type}</p>
-      <p>{exp}</p>
+      <img className="Pokecard--img" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${addZeros(id)}.png`} alt={`the pokemon ${name}`}/>
+      <p>Type: {type}</p>
+      <p>Exp: {exp}</p>
     </div>
   )
 }
