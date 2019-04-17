@@ -3,6 +3,7 @@ import Pokecard from './Pokecard';
 import './Pokedex.css';
 
 const pokedex = props => {
+  
   const pokemon = [
     {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
     {id: 7, name: 'Squirtle', type: 'water', base_experience: 63},
@@ -14,7 +15,18 @@ const pokedex = props => {
     {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
   ];
 
-  const displayPokecards = pokemon.map(el => {
+  function randomize(arr) {
+    let output = [];
+    while (output.length < arr.length) {
+      let index = arr[Math.floor(Math.random() * arr.length)];
+      if (output.indexOf(index) === -1) output.push(index);
+    }
+    return output;
+  }
+
+  const randomPokemon = randomize(pokemon);
+
+  const displayPokecards = randomPokemon.map(el => {
     return (
       <Pokecard
         key={el.name + (Math.random() * 1000)}
@@ -28,7 +40,6 @@ const pokedex = props => {
 
   return (
     <div className="Pokedex">
-      <h1>Pokedex</h1>
       <div className="Pokedex--card-container">
         {displayPokecards}
       </div>
