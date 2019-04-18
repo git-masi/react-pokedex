@@ -22,15 +22,25 @@
   transform: translateY(100vh);
 }
 
-.Pokecard--img {
+.Pokecard--img-container {
   width: 85%;
   margin: .5rem 0;
-  object-fit: cover;
-  object-position: center center;
-
   background: white;
 }
 
+.Pokecard--img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+
+  transition: all 500ms;
+}
+
+.Pokecard--img:hover {
+  opacity: .8;
+  transform: scale(1.1) translateZ(0);
+  /* force hardware acceleration (stop jitter) with translateZ, no other effect */
+}
 
 @keyframes Pokecard-show {
   from {

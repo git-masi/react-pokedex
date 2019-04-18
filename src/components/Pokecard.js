@@ -24,9 +24,12 @@ const pokecard = props => {
         animationFillMode: 'forwards'
       }}>
       <h3>{name}</h3>
-      <img 
-        className="Pokecard--img"
-        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${addZeros(id)}.png`} alt={`the pokemon ${name}`}/>
+      <a className="Pokecard--img-container" href={`https://www.pokemon.com/us/pokedex/${name}`} target="_blank" rel="noreferrer noopener">
+        <img 
+          className="Pokecard--img"
+          src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${addZeros(id)}.png`} alt={`the pokemon ${name}`}
+        />
+      </a>
       <p>Type: {type}</p>
       <p>Exp: {exp}</p>
     </div>

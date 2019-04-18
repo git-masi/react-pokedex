@@ -21,16 +21,12 @@ const pokedex = props => {
   return (
     <div className="Pokedex">
       <div
-        style={{
-          order: props.row === 'top' ? '2' : '0'
-        }}
+        style={{order: props.row === 'top' ? '2' : '0'}}
         className="Pokedex--card-container">
         {pokecardsArr}
       </div>
       <p
-        style={{
-          order: props.row === 'top' ? '1' : '0'
-        }}
+        style={{order: props.row === 'top' ? '1' : '0'}}
         className={`Pokedex--exp ${props.highestExp ? "Pokedex--winner" : "Pokedex--loser"}`}>
         Total Exp: {props.totalExp}
       </p>
