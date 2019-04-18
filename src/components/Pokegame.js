@@ -2,7 +2,7 @@ import React from 'react';
 import './Pokegame.css';
 import Pokedex from './Pokedex';
 
-const pokegame = props => {
+const pokegame = () => {
   const pokemon = [
     {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
     {id: 7, name: 'Squirtle', type: 'water', base_experience: 63},
@@ -24,12 +24,22 @@ const pokegame = props => {
     return output;
   }
 
-  const randomPokemon = randomize(pokemon);
+  const PokedexOne = randomize(pokemon);
+
+  const PokedexTwo = randomize(pokemon);
+
+  function calcExp(arr) {
+    let output = 0;
+    arr.forEach(el => {
+      output += el.base_experience;
+    })
+    return output;
+  }
 
   return (
     <div className="Pokegame">
-      <Pokedex row="top" randomPokemon={randomPokemon}/>
-      <Pokedex row="bottom" randomPokemon={randomPokemon}/>
+      <Pokedex row="top" randomPokemon={PokedexOne} totalExp={calcExp(PokedexOne)}/>
+      <Pokedex row="bottom" randomPokemon={PokedexTwo} totalExp={calcExp(PokedexTwo)}/>
     </div>
   )
 }
