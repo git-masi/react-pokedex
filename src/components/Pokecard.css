@@ -32,7 +32,7 @@
 }
 
 
-@keyframes show {
+@keyframes Pokecard-show {
   from {
     opacity: 0;
   }
