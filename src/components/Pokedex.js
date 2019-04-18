@@ -17,7 +17,8 @@ const pokedex = props => {
 
   function randomize(arr) {
     let output = [];
-    while (output.length < arr.length) {
+    // the condition here sets the number of cards to be output
+    while (output.length < (arr.length / 2)) {
       let index = arr[Math.floor(Math.random() * arr.length)];
       if (output.indexOf(index) === -1) output.push(index);
     }
@@ -26,7 +27,7 @@ const pokedex = props => {
 
   const randomPokemon = randomize(pokemon);
 
-  const displayPokecards = randomPokemon.map(el => {
+  const pokecardsArr = randomPokemon.map(el => {
     return (
       <Pokecard
         key={el.name + (Math.random() * 1000)}
@@ -38,10 +39,12 @@ const pokedex = props => {
     )
   });
 
+  // console.log(pokecardsArr);
+
   return (
     <div className="Pokedex">
       <div className="Pokedex--card-container">
-        {displayPokecards}
+        {pokecardsArr}
       </div>
     </div>
   )
