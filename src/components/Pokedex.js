@@ -20,10 +20,11 @@ const pokedex = props => {
 
   return (
     <div className="Pokedex">
+      <p style={{display: props.row === 'bottom' ? 'none' : 'block'}} className={props.highestExp ? "Pokedex--winner" : "Pokedex--loser"}>Total Exp: {props.totalExp}</p>
       <div className="Pokedex--card-container">
         {pokecardsArr}
       </div>
-      <p className={props.highestExp ? "Pokedex--winner" : "Pokedex--loser"}>Total Exp: {props.totalExp}</p>
+      <p style={{display: props.row === 'top' ? 'none' : 'block'}} className={props.highestExp ? "Pokedex--winner" : "Pokedex--loser"}>Total Exp: {props.totalExp}</p>
     </div>
   )
 }
