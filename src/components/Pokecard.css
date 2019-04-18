@@ -23,10 +23,14 @@
 }
 
 .Pokecard--img {
-  width: 90%;
+  width: 85%;
+  margin: .5rem 0;
   object-fit: cover;
   object-position: center center;
+
+  background: white;
 }
+
 
 @keyframes show {
   from {
