@@ -23,7 +23,7 @@ const pokedex = props => {
       <div className="Pokedex--card-container">
         {pokecardsArr}
       </div>
-      <p>Total Exp: {props.totalExp}</p>
+      <p className={props.highestExp ? "Pokedex--winner" : "Pokedex--loser"}>Total Exp: {props.totalExp}</p>
     </div>
   )
 }

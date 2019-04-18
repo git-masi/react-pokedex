@@ -38,8 +38,8 @@ const pokegame = () => {
 
   return (
     <div className="Pokegame">
-      <Pokedex row="top" randomPokemon={PokedexOne} totalExp={calcExp(PokedexOne)}/>
-      <Pokedex row="bottom" randomPokemon={PokedexTwo} totalExp={calcExp(PokedexTwo)}/>
+      <Pokedex row="top" randomPokemon={PokedexOne} totalExp={calcExp(PokedexOne)} highestExp={calcExp(PokedexOne) > calcExp(PokedexTwo) ? true : false}/>
+      <Pokedex row="bottom" randomPokemon={PokedexTwo} totalExp={calcExp(PokedexTwo)} highestExp={calcExp(PokedexTwo) > calcExp(PokedexOne) ? true : false}/>
     </div>
   )
 }
