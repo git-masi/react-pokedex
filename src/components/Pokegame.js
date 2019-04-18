@@ -25,7 +25,6 @@ const pokegame = () => {
   }
 
   const PokedexOne = randomize(pokemon);
-
   const PokedexTwo = randomize(pokemon);
 
   function calcExp(arr) {
@@ -36,10 +35,13 @@ const pokegame = () => {
     return output;
   }
 
+  const expOne = calcExp(PokedexOne)
+  const expTwo = calcExp(PokedexTwo)
+
   return (
     <div className="Pokegame">
-      <Pokedex row="top" randomPokemon={PokedexOne} totalExp={calcExp(PokedexOne)} highestExp={calcExp(PokedexOne) > calcExp(PokedexTwo) ? true : false}/>
-      <Pokedex row="bottom" randomPokemon={PokedexTwo} totalExp={calcExp(PokedexTwo)} highestExp={calcExp(PokedexTwo) > calcExp(PokedexOne) ? true : false}/>
+      <Pokedex row="top" randomPokemon={PokedexOne} totalExp={expOne} highestExp={expOne > expTwo ? true : false}/>
+      <Pokedex row="bottom" randomPokemon={PokedexTwo} totalExp={expTwo} highestExp={expTwo > expOne ? true : false}/>
     </div>
   )
 }
