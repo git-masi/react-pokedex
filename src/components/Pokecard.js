@@ -11,10 +11,10 @@ const pokecard = props => {
     return output;
   }
 
-  const {id, name, type, exp} = props;
+  const {id, name, type, exp, index} = props;
 
   return (
-    <div className="Pokecard">
+    <div className="Pokecard" style={{animationName: 'show', animationDuration: `${(index * 2000) + 'ms'}`, animationFillMode: 'forwards'}}>
       <h3>{name}</h3>
       <img className="Pokecard--img" src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${addZeros(id)}.png`} alt={`the pokemon ${name}`}/>
       <p>Type: {type}</p>

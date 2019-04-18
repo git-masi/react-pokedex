@@ -27,7 +27,7 @@ const pokedex = props => {
 
   const randomPokemon = randomize(pokemon);
 
-  const pokecardsArr = randomPokemon.map(el => {
+  const pokecardsArr = randomPokemon.map((el, index) => {
     return (
       <Pokecard
         key={el.name + (Math.random() * 1000)}
@@ -35,6 +35,7 @@ const pokedex = props => {
         name={el.name}
         type={el.type}
         exp={el.base_experience}
+        index={index}
       />
     )
   });
@@ -46,8 +47,6 @@ const pokedex = props => {
     })
     return output;
   }
-
-  // console.log(pokecardsArr);
 
   return (
     <div className="Pokedex">
