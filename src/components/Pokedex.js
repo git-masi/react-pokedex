@@ -39,6 +39,14 @@ const pokedex = props => {
     )
   });
 
+  function calcExp(arr) {
+    let output = 0;
+    arr.forEach(el => {
+      output += el.base_experience;
+    })
+    return output;
+  }
+
   // console.log(pokecardsArr);
 
   return (
@@ -46,6 +54,7 @@ const pokedex = props => {
       <div className="Pokedex--card-container">
         {pokecardsArr}
       </div>
+      <p>Total Exp: {calcExp(randomPokemon)}</p>
     </div>
   )
 }
