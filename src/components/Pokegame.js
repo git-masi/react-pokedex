@@ -5,8 +5,8 @@ import Pokedex from './Pokedex';
 const pokegame = props => {
   return (
     <div>
-      <Pokedex/>
-      <Pokedex/>
+      <Pokedex row="top"/>
+      <Pokedex row="bottom"/>
     </div>
   )
 }

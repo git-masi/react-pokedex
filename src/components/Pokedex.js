@@ -30,6 +30,7 @@ const pokedex = props => {
   const pokecardsArr = randomPokemon.map((el, index) => {
     return (
       <Pokecard
+        row={props.row}
         key={el.name + (Math.random() * 1000)}
         id={el.id}
         name={el.name}

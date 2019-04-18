@@ -11,6 +11,15 @@
   border: .1rem solid black;
   border-radius: .8rem;
   box-shadow: 0 .3rem .5rem rbga(0,0,0,.7);
+
+}
+
+.Pokecard--top-row {
+  transform: translateY(-100vh);
+}
+
+.Pokecard--bottom-row {
+  transform: translateY(100vh);
 }
 
 .Pokecard--img {
@@ -24,6 +33,7 @@
     opacity: 0;
   }
   to {
+    transform: translateY(0);
     opacity: 1;
   }
 }
